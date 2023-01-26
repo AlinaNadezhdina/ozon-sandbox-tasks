@@ -1,0 +1,15 @@
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.csproj.AssemblyReference.cache
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.AssemblyInfoInputs.cache
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.AssemblyInfo.cs
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.csproj.CoreCompileInputs.cache
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/bin/Debug/net7.0/task5
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/bin/Debug/net7.0/task5.deps.json
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/bin/Debug/net7.0/task5.runtimeconfig.json
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/bin/Debug/net7.0/task5.dll
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/bin/Debug/net7.0/task5.pdb
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.dll
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/refint/task5.dll
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.pdb
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/task5.genruntimeconfig.cache
+/Users/alinanadezdina/Documents/c#-ozon-sandbox/task5/obj/Debug/net7.0/ref/task5.dll
