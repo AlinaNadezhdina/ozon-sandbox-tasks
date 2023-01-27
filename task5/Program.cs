@@ -6,7 +6,7 @@ internal class Program
 	private static void Main(string[] args)
 	{
 		var testCount = Convert.ToInt32(Console.ReadLine());
-		var resultString = new StringBuilder();
+		//var resultString = new StringBuilder();
 		for (int i = 0; i < testCount; i++)
 		{
 			var taskCount = Convert.ToInt32(Console.ReadLine());
@@ -29,7 +29,8 @@ internal class Program
 							continuousOperationFlag ++;
 						else
 						{
-							resultString.Append("NO\n");
+							Console.WriteLine("NO");
+							//resultString.Append("NO\n");
 							isWrongReport = true;
 						}
 					}
@@ -40,11 +41,12 @@ internal class Program
 			}
 			if (isWrongReport == false)
 			{
-				resultString.Append("YES\n");
+				Console.WriteLine("YES");
+				//resultString.Append("YES\n");
 			}
 
 		}
-		string text = resultString.ToString();
-		Console.Write(text);
+		// string text = resultString.ToString();
+		// Console.Write(text);
 	}
 }
