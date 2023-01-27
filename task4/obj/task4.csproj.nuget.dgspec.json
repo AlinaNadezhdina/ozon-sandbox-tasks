@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alinanadezdina/Documents/c# projects/task4/task4.csproj": {}
+    "/Users/alinanadezdina/Documents/c#-ozon-sandbox/task4/task4.csproj": {}
   },
   "projects": {
-    "/Users/alinanadezdina/Documents/c# projects/task4/task4.csproj": {
+    "/Users/alinanadezdina/Documents/c#-ozon-sandbox/task4/task4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alinanadezdina/Documents/c# projects/task4/task4.csproj",
+        "projectUniqueName": "/Users/alinanadezdina/Documents/c#-ozon-sandbox/task4/task4.csproj",
         "projectName": "task4",
-        "projectPath": "/Users/alinanadezdina/Documents/c# projects/task4/task4.csproj",
+        "projectPath": "/Users/alinanadezdina/Documents/c#-ozon-sandbox/task4/task4.csproj",
         "packagesPath": "/Users/alinanadezdina/.nuget/packages/",
-        "outputPath": "/Users/alinanadezdina/Documents/c# projects/task4/obj/",
+        "outputPath": "/Users/alinanadezdina/Documents/c#-ozon-sandbox/task4/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/alinanadezdina/.nuget/NuGet/NuGet.Config"

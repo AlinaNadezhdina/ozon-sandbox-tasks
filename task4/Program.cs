@@ -10,18 +10,17 @@ internal class Program
 		return arr;
 	}
 
-	private static void fillResultStr(int [,]array, int[]  tableSizeArr, ref StringBuilder result)
+	private static void PrintSortedArr(int [,]array, int[]  tableSizeArr)//, ref StringBuilder result)
 	{
 		for (int j = 0; j < tableSizeArr[0]; j++)
 		{
 			for (int k = 0; k < tableSizeArr[1]; k++)
 			{
-				result.Append(array[j, k]);
-				result.Append(' ');
+				Console.Write($"{array[j, k]} ");
 			}
-			result.Append("\n");
+			Console.WriteLine();
 		}
-		result.Append("\n");
+		Console.WriteLine();
 	}
 	private static int [] getLineFrom2DArr(int [, ] arr, int strIndex, int columns)
 	{
@@ -48,35 +47,19 @@ internal class Program
 
 	private static void sortArrayColumn(int [,] arr, int rows, int columns, int column)
 	{
-		var swap_flag = true;
-		var left = 0;
-		var right = rows; // количество строк в arr
 		var i = 0;
-
-		while (swap_flag && left < right)
+		while (0 < rows - 1)
 		{
-			swap_flag = false;
-			i = left;
-			while (i < right - 1)
+			i = 0;
+			while (i < rows - 1)
 			{
 				if (arr[i, column] > arr[i + 1, column])
 				{
-					swap_flag = true;
 					swapStringsInArr(ref arr, i, i +  1, columns);
 				}
 				i++;
 			}
-			i = --right;
-			while (i > left)
-			{
-				if (arr[i, column] < arr[i - 1, column])
-				{
-					swap_flag = true;
-					swapStringsInArr(ref arr, i, i - 1, columns);
-				}
-				i--;
-			}
-			left++;
+			rows--;
 		}
 	}
 
@@ -92,11 +75,10 @@ internal class Program
 
 	private static void Main(string[] args)
 	{
-		StringBuilder result = new StringBuilder();
 		var testCount = Convert.ToInt32(Console.ReadLine());
 		for (int i = 0; i < testCount; i++)
 		{
-			Console.WriteLine();// пустая строка 
+			Console.ReadLine();// пустая строка 
 			int[] ? tableSizeArr = getIntArr( Console.ReadLine());
 			if (tableSizeArr is null) return ;
 			int[,] array = new int[tableSizeArr[0], tableSizeArr[1]];
@@ -115,11 +97,9 @@ internal class Program
 			if (columnChangeArr is null) return ;
 
 			clickColumnsInArray(array, tableSizeArr, columnChangeArr);
-			fillResultStr(array, tableSizeArr, ref result);
+			PrintSortedArr(array, tableSizeArr);//, ref result);
 			
 		}
-		string text = result.ToString();
-		Console.Write(text);
 	}
 }
 /*
