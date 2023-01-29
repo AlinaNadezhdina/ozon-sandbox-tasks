@@ -1,5 +1,4 @@
-﻿using System.Text;
-
+﻿
 internal class Program
 {
 	private static int[]? getIntArr(string ? line)
@@ -10,7 +9,7 @@ internal class Program
 		return arr;
 	}
 
-	private static void PrintSortedArr(int [,]array, int[]  tableSizeArr)//, ref StringBuilder result)
+	private static void PrintSortedArr(int [,]array, int[]  tableSizeArr)
 	{
 		for (int j = 0; j < tableSizeArr[0]; j++)
 		{
@@ -67,8 +66,6 @@ internal class Program
 	{
 		for (int i = 0; i < columnArr.Length; i++)
 		{
-			if (i > 0 && columnArr[i - 1] == columnArr[i])
-				return ;
 			sortArrayColumn( arr, sizeArr[0], sizeArr[1], columnArr[i] - 1);
 		}
 	}
@@ -97,7 +94,7 @@ internal class Program
 			if (columnChangeArr is null) return ;
 
 			clickColumnsInArray(array, tableSizeArr, columnChangeArr);
-			PrintSortedArr(array, tableSizeArr);//, ref result);
+			PrintSortedArr(array, tableSizeArr);
 			
 		}
 	}
