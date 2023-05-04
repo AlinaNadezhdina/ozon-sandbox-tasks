@@ -1,52 +1,36 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Text;
 
 internal class Program
 {
 	private static void Main(string[] args)
 	{
-		var testCount = Convert.ToInt32(Console.ReadLine());
-		//var resultString = new StringBuilder();
+		 var testCount = Convert.ToInt32(Console.ReadLine());
 		for (int i = 0; i < testCount; i++)
 		{
 			var taskCount = Convert.ToInt32(Console.ReadLine());
 			var taskStr = Console.ReadLine();
 			if (taskStr is null) return;
-			var taskArr = taskStr.Split(' ').Select(x => int.Parse(x)).ToArray();
-			bool isWrongReport = false;
-			int continuousOperationFlag = 0;//флаг непрерывной работы соторудника над одной задачей
-			for (int j = 0; j < taskArr.Length && isWrongReport == false; j++)
+			var taskArr = taskStr.Split(' ').Select(x => int.Parse(x))
+			.Select((value, index) => new { value, index })
+            .ToDictionary(pair => pair.index + 1,  pair => pair.value)
+			.OrderBy(pair=> pair.Value)
+			.ToDictionary(pair => pair.Key, pair => pair.Value);
+			
+			var isWrongReport = false;
+			for(int k = 0; k < taskArr.Count() - 1 && isWrongReport == false; k++)
 			{
-				for (int k = j + 1; k < taskArr.Length && isWrongReport == false; k++)
-				{
-					if (taskArr[j] == taskArr[k] && k == j + 1)
-					{
-						continuousOperationFlag++;
-					}
-					else if (taskArr[j] == taskArr[k] && k != j + 1)
-					{
-						if (continuousOperationFlag > 0)
-							continuousOperationFlag ++;
-						else
-						{
-							Console.WriteLine("NO");
-							//resultString.Append("NO\n");
-							isWrongReport = true;
-						}
-					}
-					if (taskArr[j] != taskArr[k])
-						continuousOperationFlag = 0;
+				KeyValuePair<int, int> elem = taskArr.ElementAt(k);
+				KeyValuePair<int, int> next = taskArr.ElementAt(k + 1);
+				if (elem.Value == next.Value  && elem.Key != (next.Key - 1))
+				{	
+					isWrongReport = true;
+					Console.WriteLine("NO");
+					//Console.WriteLine($"k = {k} elem.Key={elem.Key} next.Key - 1 = {elem.Key - 1}");
 				}
-				continuousOperationFlag = 0;
 			}
 			if (isWrongReport == false)
-			{
-				Console.WriteLine("YES");
-				//resultString.Append("YES\n");
-			}
+				Console.WriteLine("Yes");
 
 		}
-		// string text = resultString.ToString();
-		// Console.Write(text);
 	}
 }
