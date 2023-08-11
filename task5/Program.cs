@@ -1,36 +1,48 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
+
 internal class Program
 {
+	
 	private static void Main(string[] args)
 	{
-		 var testCount = Convert.ToInt32(Console.ReadLine());
-		for (int i = 0; i < testCount; i++)
+		// var sw = new Stopwatch();
+		// sw.Start();
+		var total = int.Parse(Console.ReadLine());
+		int[][] nums = new int[total][];
+		for (int i = 0; i < total; i++)
 		{
-			var taskCount = Convert.ToInt32(Console.ReadLine());
-			var taskStr = Console.ReadLine();
-			if (taskStr is null) return;
-			var taskArr = taskStr.Split(' ').Select(x => int.Parse(x))
-			.Select((value, index) => new { value, index })
-            .ToDictionary(pair => pair.index + 1,  pair => pair.value)
-			.OrderBy(pair=> pair.Value)
-			.ToDictionary(pair => pair.Key, pair => pair.Value);
-			
-			var isWrongReport = false;
-			for(int k = 0; k < taskArr.Count() - 1 && isWrongReport == false; k++)
+			var count = int.Parse(Console.ReadLine());
+			nums[i] = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+		}
+
+		for (int i = 0; i < total; i++)
+		{
+			var data = new Dictionary<int, int>();
+			for (int j = 0; j < nums[i].Length; j++)
 			{
-				KeyValuePair<int, int> elem = taskArr.ElementAt(k);
-				KeyValuePair<int, int> next = taskArr.ElementAt(k + 1);
-				if (elem.Value == next.Value  && elem.Key != (next.Key - 1))
-				{	
-					isWrongReport = true;
+				data.Add(j, nums[i][j]);
+			}
+			var ddata = data.OrderBy(x => x.Value).ToList();
+			var flag = 0;
+			for (int j = 0; j < data.Count - 1; j++)
+			{
+				if (ddata[j].Value == ddata[j + 1].Value && ddata[j].Key != ddata[j + 1].Key - 1)
+				{
 					Console.WriteLine("NO");
-					//Console.WriteLine($"k = {k} elem.Key={elem.Key} next.Key - 1 = {elem.Key - 1}");
+					flag = 1;
+					break;
 				}
 			}
-			if (isWrongReport == false)
-				Console.WriteLine("Yes");
-
+			if (flag == 0)
+				Console.WriteLine("YES");
 		}
+		// sw.Stop();
+		// var ts = sw.Elapsed;
+		// string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+		// 	ts.Hours, ts.Minutes, ts.Seconds,
+		// 	ts.Milliseconds / 10);
+		// Console.WriteLine(elapsedTime);
 	}
 }
