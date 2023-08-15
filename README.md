@@ -1,4 +1,9 @@
 # ozon-sandbox-tasks
 tasks for the Ozone company competition for juniors
-
-Now I have 1-5 tasks with full solution 
+	 	 
+## A. Сумматор (5 баллов)
+## B. Сумма к оплате (10 баллов)
+## C. Парное программирование (10 баллов)
+## D. Электронная таблица (10 баллов)
+## E. Отчет (15 баллов)
+## F. Отрезки времени (20 баллов)	
